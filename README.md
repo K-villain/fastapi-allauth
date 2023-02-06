@@ -3,27 +3,27 @@
 K-villain FastAPI Allauth is based on SQLAlchemy, and designed to be cutomizable.<br>
 It enables you to bring various oauth social login to your services.
 
-![Badge](https://img.shields.io/badge/version-0.1-color.svg?{ style(optional) })
-![Badge](https://img.shields.io/badge/downloads-100-color.svg?{ style(optional) })
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+![Badge](https://img.shields.io/pypi/v/fastapi-allauth?color=blueviolet&style=flat-square)
+![Badge](https://img.shields.io/pypi/dm/fastapi-allauth?style=flat-square)
+![Badge](https://img.shields.io/github/contributors/K-villain/fastapi-allauth?color=blue&style=flat-square)
 
 ---
 
-**Docs**: <a href="https://k-villain.github.io/viilain-sanghyeop" target="_blank">https://k-villain.github.io/viilain-sanghyeop</a>
+**Docs**: <a href="https://k-villain.github.io/fastapi-allauth" target="_blank">https://k-villain.github.io/fastapi-allauth</a>
 
-**Github**: <a href="https://github.com/K-villain/viilain-sanghyeop" target="_blank">https://github.com/K-villain/viilain-sanghyeop</a>
+**Github**: <a href="https://github.com/K-villain/fastapi-allauth" target="_blank">https://github.com/K-villain/fastapi-allauth</a>
 
 ---
 
 ## Features
 
-- [x] &nbsp;Extensible base user model
+- Extensible base user model
 
-- [x] &nbsp;SQLAlchemy ORM based
+- SQLAlchemy ORM based
 
-- [x] &nbsp;Cutomiazable User table
+- Cutomiazable User table
 
-- [x] &nbsp; Ready-to-use social oauth login flow
+- Ready-to-use social oauth login flow
 
 ## Contributors
 
