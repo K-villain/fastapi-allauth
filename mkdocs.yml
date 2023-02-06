@@ -1,0 +1,69 @@
+site_name: FastAPI-Allauth
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: "indigo"
+      accent: "indigo"
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: "indigo"
+      accent: "indigo"
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  icon:
+    logo: material/shark-fin
+  favicon: imgs/favicon.ico
+
+  features:
+    - content.code.copy
+    - navigation.tracking
+    - navigation.sections
+
+# repo_name: K-villan/fastapi-allauth
+# repo_url: https://github.com/K-villain/viilain-sanghyeop
+
+nav:
+  - Home: index.md
+  - Getting started: installation.md
+  - Configuration:
+      # - configuration/overview.md
+      - configuration/user/User.md
+      - configuration/allauth-manager.md
+      # - Auth:
+      #     - configuration/auth/login.md
+      #     - configuration/auth/register.md
+      #     - configuration/auth/authenticate.md
+      # - Oauth:
+      #     - BaseOauth: configuration/oauth/BaseOauth.md
+      #     - Google: configuration/oauth/GoogleOauth.md
+      #     - Naver: configuration/oauth/NaverOauth.md
+      #     - Kakao: configuration/oauth/KakaoOauth.md
+      #     - Facebook: configuration/oauth/FacebookOauth.md
+      #     - Github: configuration/oauth/GithubOauth.md
+      #     - Discord: configuration/oauth/DiscordOauth.md
+
+  - license.md
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed:
+      alternate_style: true
