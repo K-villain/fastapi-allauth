@@ -2,13 +2,14 @@ from typing import Optional, List, Dict, TypeVar, Any, cast
 from urllib.parse import urlencode
 import requests
 import time
+from secret_handler import SecretType, _get_secret_value
 T = TypeVar("T")
 
 
 class BaseOauth:
     provider: str
     client_id: str
-    client_secret: str
+    client_secret: SecretType
     redirect_uri: str
     authorize_url: str
     access_token_url: str
@@ -21,7 +22,7 @@ class BaseOauth:
         self,
         provider: str,
         client_id: str,
-        client_secret: str,
+        client_secret: SecretType,
         redirect_uri: str,
         authorize_url: str,
         access_token_url: str,
@@ -71,7 +72,7 @@ class BaseOauth:
         data = {
             "grant_type": "authorization_code",
             "client_id": self.client_id,
-            "client_secret": self.client_secret,
+            "client_secret": _get_secret_value(self.client_secret),
             "code": code,
             "redirect_uri": self.redirect_uri,
             "state": state,

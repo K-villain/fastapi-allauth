@@ -1,4 +1,5 @@
 import jwt
+from secret_handler import SecretType, _get_secret_value
 from fastapi import HTTPException, Security
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from datetime import datetime, timedelta
@@ -9,8 +10,8 @@ INVALID = "Invalid token"
 
 class AuthHandler():
 
-    secret = None
-    lifetime = None
+    secret : SecretType
+    lifetime : int
 
     def __init__() -> None:
         pass
@@ -36,7 +37,7 @@ class AuthHandler():
         else:
             payload.update({"exp": local_datetime + timedelta(hours=720)})
 
-        return jwt.encode(payload, self.secret, algorithm='HS256')
+        return jwt.encode(payload, _get_secret_value(self.secret), algorithm='HS256')
 
     def encode_login_token(self, payload: dict):
         access_token = self.encode_token(payload, "access_token")
@@ -59,7 +60,7 @@ class AuthHandler():
     def decode_access_token(self, token):
 
         try:
-            payload = jwt.decode(token, self.secret, algorithms=['HS256'])
+            payload = jwt.decode(token, _get_secret_value(self.secret), algorithms=['HS256'])
             if payload['sub'] != "access_token":
                 raise HTTPException(status_code=401, detail=INVALID)
             return payload['authority']
@@ -71,7 +72,7 @@ class AuthHandler():
 
     def decode_refresh_token(self, token):
         try:
-            payload = jwt.decode(token, self.secret, algorithms=['HS256'])
+            payload = jwt.decode(token, _get_secret_value(self.secret), algorithms=['HS256'])
             if payload['sub'] != "refresh_token":
                 raise HTTPException(status_code=401, detail=INVALID)
             return payload['authority']
