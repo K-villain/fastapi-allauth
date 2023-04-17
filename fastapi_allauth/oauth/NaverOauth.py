@@ -1,6 +1,8 @@
 from typing import Optional, List, Dict, Any
 import requests
 from . import BaseOauth
+from secret_handler import SecretType
+
 
 AUTH_URL = "https://nid.naver.com/oauth2.0/authorize"
 TOKEN_URL = "https://nid.naver.com/oauth2.0/token"
@@ -13,7 +15,7 @@ class NaverOauth(BaseOauth.BaseOauth):
         self,
         provider: str = "NAVER",
         client_id: str = "",
-        client_secret: str = "",
+        client_secret: SecretType = "",
         redirect_uri: str = "",
         scope: Optional[List[str]] = None,
         refresh_token_url: Optional[str] = None,

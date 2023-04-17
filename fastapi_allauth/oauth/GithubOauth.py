@@ -1,6 +1,8 @@
 from typing import Optional, List, Dict, Any
 import requests
 from . import BaseOauth
+from secret_handler import SecretType
+
 
 AUTH_URL = "https://github.com/login/oauth/authorize"
 TOKEN_URL = "https://github.com/login/oauth/access_token"
@@ -13,7 +15,7 @@ class GithubOauth(BaseOauth.BaseOauth):
         self,
         provider: str = "GITHUB",
         client_id: str = "",
-        client_secret: str = "",
+        client_secret: SecretType = "",
         redirect_uri: str = "",
         scope: Optional[List[str]] = None,
         refresh_token_url: Optional[str] = None,

@@ -1,6 +1,8 @@
 from typing import Optional, List, Dict, Any
 import requests
 from . import BaseOauth
+from secret_handler import SecretType
+
 
 AUTH_URL = "https://kauth.kakao.com/oauth/authorize"
 TOKEN_URL = "https://kauth.kakao.com/oauth/token"
@@ -13,7 +15,7 @@ class KakaoOauth(BaseOauth.BaseOauth):
         self,
         provider: str = "KAKAO",
         client_id: str = "",
-        client_secret: str = "",
+        client_secret: SecretType = "",
         redirect_uri: str = "",
         scope: Optional[List[str]] = None,
         refresh_token_url: Optional[str] = None,

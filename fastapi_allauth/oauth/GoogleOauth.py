@@ -1,6 +1,8 @@
 from typing import Optional, List, Dict, Any
 import requests
 from . import BaseOauth
+from secret_handler import SecretType
+
 
 AUTH_URL = "https://accounts.google.com/o/oauth2/v2/auth"
 TOKEN_URL = "https://oauth2.googleapis.com/token"
@@ -13,7 +15,7 @@ class GoogleOauth(BaseOauth.BaseOauth):
         self,
         provider: str = "GOOGLE",
         client_id: str = "",
-        client_secret: str = "",
+        client_secret: SecretType = "",
         redirect_uri: str = "",
         scope: Optional[List[str]] = None,
         refresh_token_url: Optional[str] = None,

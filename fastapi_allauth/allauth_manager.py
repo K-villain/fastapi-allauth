@@ -6,12 +6,13 @@ from oauth.BaseOauth import BaseOauth
 from auth import login, register, AuthHandler
 from model import BaseUser
 from functools import wraps
+from secret_handler import SecretType
 
 
 class AllauthManager:
     db: Session
     user: BaseUser
-    secret: str
+    secret: SecretType
     lifetime_second: int = 3600
 
     def __init__(self, db, user, secret, lifetime_second) -> None:
